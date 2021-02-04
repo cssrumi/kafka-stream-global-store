@@ -1,0 +1,32 @@
+quarkus:
+  application:
+    name: k-stream
+  kafka-streams:
+    bootstrap-servers: localhost:9092
+    topics:
+      - vtopic
+  http:
+    port: 8081
+
+kafka-streams:
+  cache:
+    max:
+      bytes:
+        byfferring: 10240
+  commit:
+    interval:
+      ms: 1000
+  metadata:
+    max:
+      age:
+        ms: 500
+  auto:
+    offset:
+      reset:
+        earliest
+  metrics:
+    recording:
+      level: INFO
+  heartbeat:
+    interval:
+      ms: 200
